@@ -10,14 +10,16 @@ export class Winner extends React.Component {
         return (
             <div>
                 <div class="congrats">
-                    {/* <h1><b>The winner is {this.props.winner}</b></h1> */}
-                    <h1><b>The winner is {this.props.max}</b></h1>
-                </div>
-                <div>
-                {this.props.winner.map((item,index) => (
-                                <p>{item.count}</p>
-
-                        ))}
+                <p>The winner is</p>
+                {this.props.winner.map((item,index) => {
+                    if(item.count === this.props.max) {
+                        return ( 
+                       <div>
+                           <p><b><u> {item.subject}</u></b></p>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSy6BSz58E25h4rKHtgZ37lDxGsDhOIYPKKpQ&usqp=CAU"></img>
+                       </div> )
+                    }
+                })}
                 </div>
                 <div>
                     <Navbar expand="lg">

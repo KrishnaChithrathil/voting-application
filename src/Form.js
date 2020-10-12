@@ -35,7 +35,7 @@ export class Form extends React.Component {
         <form>
           <div>
             <label>Subject</label>
-            <input type="text" className="form" value={this.state.name} onBlur={this.changeSubject} />
+            <input type="text" className="form"  onBlur={this.changeSubject} />
           </div>
           <div>
             <label>Description</label>
