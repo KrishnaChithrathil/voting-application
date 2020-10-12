@@ -1,0 +1,30 @@
+.addbtnn {
+  background-color: #299c1a;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 50px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+  .table-styleee {
+    width: 100%;
+    margin: 1px 195px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    text-align: center;
+    background-color: rgb(94, 94, 102);
+    
+}
+.table-style-001 {
+  font-size: 19px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(0, 0, 0);
+}
+
+.table-style-002 {
+  background-color: rgb(49, 49, 58);
+  color: rgb(243, 239, 239);
+}

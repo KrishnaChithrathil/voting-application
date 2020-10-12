@@ -1,0 +1,9 @@
+.congrats {
+	font-size: 100px;
+	text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkred;
+    padding: 10px 150px;
+    margin: 150px 100px ;
+    background-color: rgb(91, 122, 122);
+}
