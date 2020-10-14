@@ -1,7 +1,7 @@
 import React from 'react';
-import { Form } from './Form';
-import { Navbar, Nav } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Forms } from './Form';
+// import { Navbar, Nav } from 'react-bootstrap';
+// import { NavLink } from 'react-router-dom';
 
 export class NewSub extends React.Component {
 
@@ -11,14 +11,14 @@ export class NewSub extends React.Component {
     return (
       <div className="mt-5 d-flex justify-content-left">
         <div>
-          <Form />
+          <Forms />
         </div>
         <div>
-          <Navbar expand="lg">
+          {/* <Navbar expand="lg">
             <Nav>
-              <NavLink className="p-5 fixed-top bg-dark text-white" to="/Subjects" >Go back</NavLink>
+              <NavLink className="p-3 fixed-top bg-dark text-white" to="/Subjects" >Go back</NavLink>
             </Nav>
-          </Navbar>
+          </Navbar> */}
         </div>
 
       </div>

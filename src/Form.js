@@ -1,6 +1,10 @@
 import React from 'react';
 import './Form.css'
-export class Form extends React.Component {
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+// import {checkIcon} from './check.svg';
+
+export class Forms extends React.Component {
 
   userdata;
   constructor(props) {
@@ -8,47 +12,66 @@ export class Form extends React.Component {
     this.state = {
       sub: '',
       description: '',
+      suberr : ''
     }
   }
 
-  changeSubject=(e)=> {
+  changeSubject = (e) => {
     this.setState({ sub: e.target.value });
   }
-  changeDesc=(e)=> {
-    this.setState({ description: e.target.value });
-  }
-  pageSubmit=(e) => {
-    e.preventDefault();
-    if(localStorage.getItem("sublist") == null) {
+  // changeDesc = (e) => {
+  //   this.setState({ description: e.target.value });
+  // }
+  pageSubmit = (e) => {
+    if (localStorage.getItem("sublist") == null) {
       localStorage.setItem("sublist", '[]');
     }
+    let errors = {};
     let previousList = JSON.parse(localStorage.getItem('sublist'));
-    let NewsubjectObjectWithNameDescription = {subject:this.state.sub, count: 0, id:previousList.length, status: 'Inactive'}
-    previousList.push(NewsubjectObjectWithNameDescription);
-    localStorage.setItem("sublist", JSON.stringify(previousList));
+    let NewsubjectObjectWithNameDescription = { subject: this.state.sub, count: 0, id: previousList.length, status: 'Inactive' }
+    const found = previousList.some(el => el.subject === this.state.sub);
+    if (this.state.sub === '') {
+      e.preventDefault();
+      this.setState({suberr: "*Subject cannot be null. Please provide a value"})
+      toast.warning("Subject cannot be null.")
+    }
+    else if (!found) {
+      previousList.push(NewsubjectObjectWithNameDescription);
+      localStorage.setItem("sublist", JSON.stringify(previousList));
+      toast.success("Subject added successfully", { icon: toast.checkIcon })
+    } else {
+      this.setState({suberr: "*This Subject already exists. Please try other."})
+      e.preventDefault();
+      toast.error("Ooops! Duplicate entry");
+      // window. location.reload(true);
+    }
   }
-  // desc:this.state.description
+
+
+
 
   render() {
     return (
       <div className="form-group">
-        <form>
+        <form >
           <div>
             <label>Subject</label>
-            <input type="text" className="form"  onBlur={this.changeSubject} />
+            <input type="text" className="form" onBlur={this.changeSubject} noValidate />
+             <span style={{color: "red"}}>{this.state.suberr}</span>
           </div>
           <div>
             <label>Description</label>
-            <input type="text" className="form" value={this.state.desc} onBlur={this.changeDesc} />
+            <input type="text" className="form" />
           </div>
-          <div><button type="submit" className="btn" onClick={this.pageSubmit}>Submit</button></div>
+          {/* <div><button type="submit" className="btn" onClick={this.pageSubmit}>Submit</button></div> */}
+          <div>
+            <Link to="/Subjects">
+              <button onClick={this.pageSubmit} className="btn">Submit</button></Link>
+          </div>
         </form>
-        <div >
-          {/* <p>{this.state.sub}</p> */}
-        </div>
       </div>
     );
   }
 
 }
-export default Form;
+export default Forms;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Winner } from './Winner';
 
 
-export class NewSub extends React.Component {
+export class WinPass extends React.Component {
 
     constructor(props) {
         super();
@@ -27,4 +27,4 @@ export class NewSub extends React.Component {
     }
 }
 
-export default NewSub;
+export default WinPass;

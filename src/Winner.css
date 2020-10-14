@@ -1,11 +1,17 @@
 .congrats {
-	font-size: 45px;
+	font-size: 70px;
 	text-align: center;
-    font-family: Cavolini;
+    font-family: Brush Script MT;
     color: darkred;
-    padding: 10px 150px;
-    margin: 100px 150px ;
+    padding: 5px 100px;
+    margin: 50px 150px ;
     background-size:cover;
-    background-color: rgb(245, 239, 239);
+    background-color: rgb(247, 242, 242);
     width: 70%;
+}
+
+.winner {
+    font-family: Bernard MT Condensed;
+    color: rgb(71, 15, 15);
+    font-size: 80px;
 }
