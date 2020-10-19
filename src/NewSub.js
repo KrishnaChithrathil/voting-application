@@ -13,13 +13,13 @@ export class NewSub extends React.Component {
         <div>
           <Forms />
         </div>
-        <div>
-          {/* <Navbar expand="lg">
+        {/* <div>
+          <Navbar expand="lg">
             <Nav>
               <NavLink className="p-3 fixed-top bg-dark text-white" to="/Subjects" >Go back</NavLink>
             </Nav>
-          </Navbar> */}
-        </div>
+          </Navbar>
+        </div> */}
 
       </div>
     );

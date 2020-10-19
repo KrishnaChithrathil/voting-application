@@ -11,20 +11,38 @@
 }
   .table-styleee {
     width: 100%;
-    margin: 1px 195px;
     font-family: 'Times New Roman', Times, serif;
-    font-size: larger;
     text-align: center;
-    background-color: rgb(236, 236, 238);
-    
+    font-size: 17px; /* rows only */
+    background-color: rgb(255, 255, 255);
+    line-height: 20px;
 }
-.table-style-001 {
-  font-size: 19px;
+/* .table-style-001 {
+  font-size: 17px;
   font-family: 'Times New Roman', Times, serif;
   color: rgb(0, 0, 0);
+} */
+
+th {
+  background-color: rgb(90, 90, 252);
+  color: rgb(243, 239, 239);
+  width: 600px; 
+  height: 50px;
+  font-size: 20px; /*th heading*/
+  position: sticky;
+  top: 0;
+}
+.expand-maximum-on-hover {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: nowrap; 
+  width: 500px; 
 }
 
-.table-style-002 {
-  background-color: rgb(49, 49, 58);
-  color: rgb(243, 239, 239);
+tr:nth-child(even) {background-color: #f2f0f7;}
+.ttable {
+  overflow-y:scroll;
+  height: 400px;
+  position:relative;
 }

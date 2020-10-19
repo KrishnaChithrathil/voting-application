@@ -4,6 +4,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import './NewSub';
 import './Subjects.css'
+// import {Forms} from './Form'
 
 export class Subjects extends React.Component {
   constructor(props) {
@@ -18,9 +19,6 @@ export class Subjects extends React.Component {
       this.setState({ sublist: JSON.parse(localStorageList) });
     }
   }
-
-
-
   statusUpdate(id, status) {
     const objArray = this.state.sublist;
     objArray.map(item => {
@@ -37,18 +35,59 @@ export class Subjects extends React.Component {
     this.setState({ sublist: objArray });
   }
 
+  delete = (e) => {
+    var result = window.confirm("Are you sure you want to delete?");
+    if (result) {
+      const objArray = this.state.sublist;
+      objArray.splice(objArray.indexOf(e), 1);
+      localStorage.setItem("sublist", JSON.stringify(objArray));
+      this.setState({ sublist: objArray });
+      window.location.reload(true);
+    }
+  }
+
+  sortMyObjArray =()=> {
+    const objArray = this.state.sublist;
+    objArray.sort((a,b) => {
+      let textA = a.subject.toLowerCase();
+      let textB = b.subject.toLowerCase();
+      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    })
+    localStorage.setItem("sublist", JSON.stringify(objArray));
+    this.setState({ sublist: objArray });
+  }
+
+
+  update(e) {
+  //   e.hidden = false;
+  // }
+  // save = (e) => {
+  //   const updateItem = {
+  //     text: this.state.updateText ? this.state.updateText : e.text,
+  //     id: Date.now()
+  //   };
+  //   const objArray = this.state.sublist;
+  //   objArray.splice(objArray.indexOf(e), 1, updateItem);
+  //   localStorage.setItem("sublist", JSON.stringify(objArray));
+  //   this.setState({ sublist: objArray });
+  }
   render() {
     return (
       <div>
-        <div className="mt-5 d-flex justify-content-left">
-          <Table comp={this.state.sublist} statusUpdate={this.statusUpdate.bind(this)} />
-        </div>
         <div>
           <Navbar>
             <Nav>
-              <NavLink to="/NewSub" ><button className="btncls">Add New Subject</button></NavLink>
+            <input type = "text" className="textbox" placeholder="Search by Subject"/> <button className="searchbtn">Search</button>
+              <NavLink to="/NewSub" ><button className="btncls">Add New</button></NavLink>
             </Nav>
           </Navbar>
+        </div>
+        <div className="mt-5 d-flex justify-content-left">
+          <Table comp={this.state.sublist}
+            statusUpdate={this.statusUpdate.bind(this)}
+            delete={this.delete}
+            sortMyObjArray={this.sortMyObjArray}
+            edit={this.update} />
         </div>
       </div>
     );
