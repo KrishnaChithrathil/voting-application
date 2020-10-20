@@ -15,7 +15,7 @@ export class Winner extends React.Component {
                         if (item.count === this.props.max) {
                             return (
                                 <div key={index}>
-                                    <p className="winner"><b>{item.subject} with {this.props.max} counts</b></p>
+                                    <p className="winner"><b>{item.subject} won with {this.props.max} counts</b></p>
 
                                 </div>)
                         }
@@ -29,7 +29,7 @@ export class Winner extends React.Component {
                 <div>
                     <Navbar expand="lg">
                         <Nav>
-                            <NavLink className="p-5 fixed-top bg-primary text-light" to="/Vote" >Go back</NavLink>
+                            <NavLink className="p-5 fixed-top bg-21 text-light" to="/Vote" >Go back</NavLink>
                         </Nav>
                     </Navbar>
                 </div>

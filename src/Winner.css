@@ -2,16 +2,16 @@
 	font-size: 70px;
 	text-align: center;
     font-family: Brush Script MT;
-    color: darkred;
+    color: #6d7ae0;
     padding: 5px 10px;
     margin: 50px 150px ;
     background-size:cover;
-    background-color: rgb(247, 242, 242);
+    background-color: rgb(245, 243, 250);
     width: 70%;
 }
 
 .winner {
     font-family: Bernard MT Condensed;
-    color: rgb(71, 15, 15);
+    color: #6d7ae0;
     font-size: 75px;
 }

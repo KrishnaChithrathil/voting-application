@@ -1,29 +1,33 @@
 .btncls {
-    background-color:rgb(90, 90, 252);
+    background-color:#6D7AE0;
     color: white;
     padding: 1px;
     text-align: center;
     font-size: 16px;
-    margin: 15px 150px;
+    margin: 1px 260px;
+    margin-bottom: 1px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
     width: 8%;
     padding-right: 1px;
-    /* margin-right: 900px; */
-    position:absolute;
+    position: fixed;
     left: 870px;
+    top: 130px;
+    border: none;
 }
 
 .searchbtn {
-    background-color:rgb(90, 90, 252);
+    background-color:#6D7AE0;
     color: white;
     position:absolute;
     left: 207px;
-    width: 8%;
+    width: 5%;
     margin: 15px;
+    margin: 10px 130px;
+    border: none;
+    padding: 3px;
 }
 
-.textbox {
-    margin: 15px 1px;
+.textboxx {
+    margin: 10px 1px;
     padding-right: 21px;
 }

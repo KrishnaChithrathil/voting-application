@@ -1,34 +1,48 @@
-.addbtnn {
-  background-color: #299c1a;
-  color: white;
+/* .addbtnn {
+  background-color: #ffffff;
+  color: #6D7AE0;
   padding: 5px;
   text-align: center;
   font-size: 16px;
   margin: 4px 50px;
   cursor: pointer;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  border: none;
+} */
+.Active {
+  color:green;
+}
+.Inactive {
+  color: crimson;
+}
+.addbtnnActive {
+  background-color: #ffffff;
+  color: #0a7a06;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 50px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  border: none;
 }
   .table-styleee {
     width: 100%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 17px; /* rows only */
+    font-size: 15px; /* rows only */
     background-color: rgb(255, 255, 255);
     line-height: 20px;
 }
-/* .table-style-001 {
-  font-size: 17px;
-  font-family: 'Times New Roman', Times, serif;
-  color: rgb(0, 0, 0);
-} */
 
 th {
-  background-color: rgb(90, 90, 252);
+  background-color: #6D7AE0;
   color: rgb(243, 239, 239);
   width: 600px; 
-  height: 50px;
-  font-size: 20px; /*th heading*/
+  height: 40px;
+  font-size: 18px; /*th heading*/
   position: sticky;
   top: 0;
 }
@@ -39,10 +53,37 @@ th {
   white-space: nowrap; 
   width: 500px; 
 }
+.expand {
+  /* text-overflow: ellipsis; */
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: normal; 
+  width: 200px; 
+}
 
 tr:nth-child(even) {background-color: #f2f0f7;}
 .ttable {
   overflow-y:scroll;
-  height: 400px;
+  height: 430px;
   position:relative;
+  margin-bottom: 1px 0px;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 40px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #62636b; 
+  border-radius: 40px;
+  height: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #525261; 
 }

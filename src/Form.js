@@ -50,12 +50,12 @@ export class Forms extends React.Component {
       <div className="form-group">
         <form >
           <div>
-            <label>Subject</label>
+            <label><b>Subject</b></label>
             <input type="text" className="form" onBlur={this.changeSubject} noValidate />
             <p style={{ color: "red" }}>{this.state.suberr}</p>
           </div>
           <div>
-            <label>Description</label>
+            <label><b>Description</b></label>
             <input type="text" onBlur={this.changeDesc} className="form" />
           </div>
           {/* <div><button type="submit" className="btn" onClick={this.pageSubmit}>Submit</button></div> */}

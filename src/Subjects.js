@@ -46,9 +46,9 @@ export class Subjects extends React.Component {
     }
   }
 
-  sortMyObjArray =()=> {
+  sortMyObjArray = () => {
     const objArray = this.state.sublist;
-    objArray.sort((a,b) => {
+    objArray.sort((a, b) => {
       let textA = a.subject.toLowerCase();
       let textB = b.subject.toLowerCase();
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
@@ -56,38 +56,52 @@ export class Subjects extends React.Component {
     localStorage.setItem("sublist", JSON.stringify(objArray));
     this.setState({ sublist: objArray });
   }
+  sortZtoA = () => {
+    const objArray = this.state.sublist;
+    objArray.sort((a, b) => {
+      let textA = a.subject.toLowerCase();
+      let textB = b.subject.toLowerCase();
+      return (textA > textB) ? -1 : (textA < textB) ? 1 : 0;
+    })
+    localStorage.setItem("sublist", JSON.stringify(objArray));
+    this.setState({ sublist: objArray });
+  }
 
 
   update(e) {
-  //   e.hidden = false;
-  // }
-  // save = (e) => {
-  //   const updateItem = {
-  //     text: this.state.updateText ? this.state.updateText : e.text,
-  //     id: Date.now()
-  //   };
-  //   const objArray = this.state.sublist;
-  //   objArray.splice(objArray.indexOf(e), 1, updateItem);
-  //   localStorage.setItem("sublist", JSON.stringify(objArray));
-  //   this.setState({ sublist: objArray });
+    //   e.hidden = false;
+    // }
+    // save = (e) => {
+    //   const updateItem = {
+    //     text: this.state.updateText ? this.state.updateText : e.text,
+    //     id: Date.now()
+    //   };
+    //   const objArray = this.state.sublist;
+    //   objArray.splice(objArray.indexOf(e), 1, updateItem);
+    //   localStorage.setItem("sublist", JSON.stringify(objArray));
+    //   this.setState({ sublist: objArray });
   }
   render() {
     return (
       <div>
+        <div className="ttext">
+        <input type="text" className="textboxx" placeholder="Search by Subject" />
+          <button className="searchbtn">Search</button>
+        </div>
         <div>
           <Navbar>
             <Nav>
-            <input type = "text" className="textbox" placeholder="Search by Subject"/> <button className="searchbtn">Search</button>
               <NavLink to="/NewSub" ><button className="btncls">Add New</button></NavLink>
             </Nav>
           </Navbar>
         </div>
-        <div className="mt-5 d-flex justify-content-left">
+        <div className="d-flex justify-content-left">
           <Table comp={this.state.sublist}
             statusUpdate={this.statusUpdate.bind(this)}
             delete={this.delete}
             sortMyObjArray={this.sortMyObjArray}
-            edit={this.update} />
+            edit={this.update} 
+            sortZtoA={this.sortZtoA}/>
         </div>
       </div>
     );
