@@ -23,9 +23,9 @@ export class Model extends React.Component {
           <div >
             <form>
               <label>Subject</label><br></br>
-              <input type="text" placeholder="Subject name" /><br></br>
+              <input type="text" value = {this.props.subject}/><br></br>
               <label>Description</label><br></br>
-              <input type="text" placeholder="Subject Description" /><br></br>
+              <input type="text"/><br></br>
               <button >Save Changes</button>
             </form>
           </div>

@@ -5,18 +5,16 @@ import './Winner.css';
 
 export class Winner extends React.Component {
 
-
     render() {
         return (
             <div>
                 <div className="congrats">
                     <p>Congratulations!</p>
                     {this.props.winner.map((item, index) => {
-                        if (item.count === this.props.max) {
+                        if (item.count === this.props.max && this.props.max!== 0) {
                             return (
                                 <div key={index}>
                                     <p className="winner"><b>{item.subject} won with {this.props.max} counts</b></p>
-
                                 </div>)
                         }
                         return null;

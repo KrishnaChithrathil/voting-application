@@ -34,7 +34,7 @@
     text-align: center;
     font-size: 15px; /* rows only */
     background-color: rgb(255, 255, 255);
-    line-height: 20px;
+    line-height: 25px;
 }
 
 th {
@@ -54,17 +54,15 @@ th {
   width: 500px; 
 }
 .expand {
-  /* text-overflow: ellipsis; */
-  overflow: hidden;
-  word-wrap: break-word;
-  white-space: normal; 
-  width: 200px; 
+  table-layout: fixed;
 }
 
-tr:nth-child(even) {background-color: #f2f0f7;}
+tr:nth-child(even) {background-color: #f2f0f7;
+  line-height: 23px;}
 .ttable {
   overflow-y:scroll;
   height: 430px;
+  overflow: auto;
   position:relative;
   margin-bottom: 1px 0px;
 }

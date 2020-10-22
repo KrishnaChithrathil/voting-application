@@ -1,13 +1,13 @@
 .btncls {
     background-color:#6D7AE0;
     color: white;
-    padding: 1px;
+    padding: 3px;
     text-align: center;
     font-size: 16px;
-    margin: 1px 260px;
+    margin: 20px 284px;
     margin-bottom: 1px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    width: 8%;
+    width: 6%;
     padding-right: 1px;
     position: fixed;
     left: 870px;

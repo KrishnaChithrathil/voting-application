@@ -18,9 +18,10 @@ export class WinPass extends React.Component {
         }
 
     render() {
+      let activeList = this.state.sublist.filter(x => x.status === "Active")
         return (
             <div>
-                <Winner max = {Math.max.apply(null, this.state.sublist.map(item => item.count))}
+                <Winner max = {Math.max.apply(null, activeList.map(item => item.count))}
                 winner = {this.state.sublist.sort((b, a) => parseFloat(a.count) - parseFloat(b.count))}></Winner>
             </div>
         );

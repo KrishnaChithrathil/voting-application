@@ -19,11 +19,9 @@ export class Pass extends React.Component {
     objArray.map(item => {
       if (item.id === id) {
         return (item.count = item.count + 1);
-        // alert("hey");
       }
       return null;
     })
-    // alert("hey")
     localStorage.setItem("sublist", JSON.stringify(objArray));
     this.setState({ sublist: objArray });
   }

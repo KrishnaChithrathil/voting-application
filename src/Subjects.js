@@ -11,6 +11,7 @@ export class Subjects extends React.Component {
     super();
     this.state = {
       sublist: [],
+      search: '',
     }
   }
   componentDidMount() {
@@ -33,6 +34,7 @@ export class Subjects extends React.Component {
     })
     localStorage.setItem("sublist", JSON.stringify(objArray));
     this.setState({ sublist: objArray });
+    // window.location.reload(true);
   }
 
   delete = (e) => {
@@ -67,27 +69,9 @@ export class Subjects extends React.Component {
     this.setState({ sublist: objArray });
   }
 
-
-  update(e) {
-    //   e.hidden = false;
-    // }
-    // save = (e) => {
-    //   const updateItem = {
-    //     text: this.state.updateText ? this.state.updateText : e.text,
-    //     id: Date.now()
-    //   };
-    //   const objArray = this.state.sublist;
-    //   objArray.splice(objArray.indexOf(e), 1, updateItem);
-    //   localStorage.setItem("sublist", JSON.stringify(objArray));
-    //   this.setState({ sublist: objArray });
-  }
   render() {
     return (
       <div>
-        <div className="ttext">
-        <input type="text" className="textboxx" placeholder="Search by Subject" />
-          <button className="searchbtn">Search</button>
-        </div>
         <div>
           <Navbar>
             <Nav>
@@ -107,5 +91,4 @@ export class Subjects extends React.Component {
     );
   }
 }
-
 export default Subjects;
