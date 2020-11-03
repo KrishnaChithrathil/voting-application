@@ -9,6 +9,7 @@ import { Pass } from './Pass';
 import WinPass from './WinPass';
 import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Update from './Update';
 // import {checkIcon} from './check.svg';
 
 
@@ -16,13 +17,16 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <BrowserRouter>
-      <div className="container">
-        <h3 className="m-3 d-flex justify-content-center">React Voting Application</h3>
+      <div>
+        {/* <h3 className="m-3 d-flex justify-content-center">React Voting Application</h3> */}
         <Navigation />
+        <div  className="container">
         <Route exact path='/Subjects' component={Subjects} />
         <Route exact path='/Vote' component={Pass} />
         <Route exact path='/WinPass' component={WinPass} />
         <Route exact path='/NewSub' component={NewSub} />
+        <Route exact path='/Update' component={Update} />
+        </div>
       </div>
       <ToastContainer
         draggable={true}

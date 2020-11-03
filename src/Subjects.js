@@ -1,7 +1,5 @@
 import React from 'react';
 import Table from './Table';
-import { Navbar, Nav } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
 import './NewSub';
 import './Subjects.css'
 // import {Forms} from './Form'
@@ -37,14 +35,15 @@ export class Subjects extends React.Component {
     // window.location.reload(true);
   }
 
-  delete = (e) => {
+  delete = (id) => {
     var result = window.confirm("Are you sure you want to delete?");
     if (result) {
       const objArray = this.state.sublist;
-      objArray.splice(objArray.indexOf(e), 1);
+      const idToDelete = objArray.findIndex(x => x.id === id);
+      objArray.splice(idToDelete,1);
       localStorage.setItem("sublist", JSON.stringify(objArray));
       this.setState({ sublist: objArray });
-      window.location.reload(true);
+      // window.location.reload(true);
     }
   }
 
@@ -72,13 +71,6 @@ export class Subjects extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <Navbar>
-            <Nav>
-              <NavLink to="/NewSub" ><button className="btncls">Add New</button></NavLink>
-            </Nav>
-          </Navbar>
-        </div>
         <div className="d-flex justify-content-left">
           <Table comp={this.state.sublist}
             statusUpdate={this.statusUpdate.bind(this)}

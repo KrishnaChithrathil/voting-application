@@ -1,15 +1,21 @@
-/* .navstyle {
-    font-size: 17px;
-    width: 100%;
-    background-color:  #6D7AE0;
-    height: 70px;
-    padding-top: 20px;
-    padding-left: 10px;
-} */
 .bg-21 {
     background-color: #6D7AE0 !important;
     position: fixed;
     top: 0;
     width: 100%;
 }
+.ml {
+    margin-left: 1070px !important;
+    font-size: 20px;
+}
+.navbar {
+    position: fixed;
+    display: flex;
+}
 
+.container {
+padding-left: 30px;
+padding-right: 60px;
+max-width: 1110px;
+min-width: 1000px;
+}

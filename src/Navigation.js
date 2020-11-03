@@ -13,8 +13,8 @@ export class Navigation extends Component {
             //     <NavLink className="d-inline p-2 bg-primary text-light" to="/Vote" >Vote</NavLink>
             // </div>
             
-            <nav className="navbar navbar-expand navbar-dark bg-21">
-            <div className="navbar-nav ml-auto ">
+            <nav className="navbar p-3 navbar-expand navbar-dark bg-21">
+            <div className="navbar-nav ml ">
                 <li className="nav-item">
                     <Link to={"/subjects"} className="nav-link text-light">
                         Subjects
